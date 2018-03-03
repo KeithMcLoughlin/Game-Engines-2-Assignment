@@ -1,7 +1,7 @@
 # Game-Engines-2-Assignment
 Simulation of a space battle created with unity
 
-Humanity's Trial Storyboard:
+Humanity's Trial Storyboard: <br />
 The barbaric alien race, the Vasik from the planet Zils, have hosted vicious space arena battles for centuries for entertainment and pride.
 The newly appointed leader of Vasik saw the potential of his people to dominate the universe.
 He decided to go from planet to planet, forcing every single resident to participate in their twisted games against the Vasik's best pilots.
@@ -18,7 +18,7 @@ Will humanity become extinct or will they prove their worth and save the univers
 ![ScreenShot](https://raw.github.com/KeithMcLoughlin/Game-Engines-2-Assignment/master/Storyboard/images/vasiks_intro.png)
 
 ![ScreenShot](https://raw.github.com/KeithMcLoughlin/Game-Engines-2-Assignment/master/Storyboard/images/Games_1.png)
-cameras will be set up on the obstacles in the arena, and will show if anyone crashes into them
+cameras will be set up on the obstacles in the arena, and will show if anyone crashes into them. Also, cameras will be set up on the edge of the dome and on each pilots spaceship
 
 ![ScreenShot](https://raw.github.com/KeithMcLoughlin/Game-Engines-2-Assignment/master/Storyboard/images/Games_2.png)
 when a certain character dies, specific dialog will come up in response to that and a character will have some stats boosted
