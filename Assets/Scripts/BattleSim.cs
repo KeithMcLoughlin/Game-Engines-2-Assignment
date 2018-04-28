@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BattleSim : MonoBehaviour {
+
+    public SwitchCameraPosition SwitchCameraScript;
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    public void StartBattle()
+    {
+        SwitchCameraScript.enabled = true;
+        Debug.Log("Battle Started");
+    }
+}

@@ -17,7 +17,7 @@ public class IntroScriptDisplay : MonoBehaviour {
         
         var introLines = Intro.text.Split(new string[] { "\r\n\r\n" }, System.StringSplitOptions.None);
 
-        TotalTime = introLines.Length * (TimePerLine + TimePerFade * 2);
+        TotalTime = introLines.Length * (TimePerLine + TimePerFade * 3);
 
         StartCoroutine(IntroText(introLines, displayText, TimePerLine, TimePerFade));
     }
