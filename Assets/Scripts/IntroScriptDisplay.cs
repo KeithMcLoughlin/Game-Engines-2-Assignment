@@ -8,6 +8,7 @@ public class IntroScriptDisplay : MonoBehaviour {
     public TextAsset Intro;
     public float TimePerLine;
     public float TimePerFade;
+    public float TotalTime;
 
     // Use this for initialization
 	void Start ()
@@ -15,15 +16,11 @@ public class IntroScriptDisplay : MonoBehaviour {
         Text displayText = GetComponent<Text>();
         
         var introLines = Intro.text.Split(new string[] { "\r\n\r\n" }, System.StringSplitOptions.None);
-        
+
+        TotalTime = introLines.Length * (TimePerLine + TimePerFade * 2);
+
         StartCoroutine(IntroText(introLines, displayText, TimePerLine, TimePerFade));
-        
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public IEnumerator IntroText(string[] script, Text screenComponent, float timePerLine, float timeToFade)
     {
