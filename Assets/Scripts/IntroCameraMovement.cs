@@ -24,11 +24,10 @@ public class IntroCameraMovement : MonoBehaviour {
         transform.position = Vector3.Lerp(StartTransform.position, EndTransform.position, time);
         transform.rotation = Quaternion.Lerp(StartTransform.rotation, EndTransform.rotation, time);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             this.transform.position = EndTransform.position;
             this.transform.rotation = EndTransform.rotation;
-            Debug.Log("Intro skipped");
         }
 
         if(this.transform.position == EndTransform.position)

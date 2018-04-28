@@ -23,13 +23,16 @@ public class SwitchCameraPosition : MonoBehaviour {
 
 	void Update ()
     {
-        if(elapsed > timeBetweenSwitches)
+        if(Input.GetKeyDown(KeyCode.RightArrow) || elapsed > timeBetweenSwitches)
         {
             currentCameraPosition++;
-            var cameraIndex = currentCameraPosition % CameraPositions.Count;
-            SetCameraTransform(CameraPositions[cameraIndex]);
-            CameraNumberDisplayText.text = "Cam " + (cameraIndex + 1);
-            elapsed = 0.0f;
+            ChangeCamera(currentCameraPosition);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            currentCameraPosition--;
+            ChangeCamera(currentCameraPosition);
         }
 
         elapsed += Time.deltaTime;
@@ -39,5 +42,15 @@ public class SwitchCameraPosition : MonoBehaviour {
     {
         this.transform.position = newTransform.position;
         this.transform.rotation = newTransform.rotation;
+    }
+
+    void ChangeCamera(int cameraNumber)
+    {
+        var cameraIndex = cameraNumber % CameraPositions.Count;
+        if (cameraIndex < 0)
+            cameraIndex += CameraPositions.Count;
+        SetCameraTransform(CameraPositions[cameraIndex]);
+        CameraNumberDisplayText.text = "Cam " + (cameraIndex + 1);
+        elapsed = 0.0f;
     }
 }
