@@ -19,6 +19,5 @@ public class BattleSim : MonoBehaviour {
     public void StartBattle()
     {
         SwitchCameraScript.enabled = true;
-        Debug.Log("Battle Started");
     }
 }
