@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 114631205475019408}
   - component: {fileID: 114290254907624684}
   - component: {fileID: 65057806393173930}
+  - component: {fileID: 114837147933423306}
   m_Layer: 0
   m_Name: Vasik Ship
   m_TagString: Untagged
@@ -309,6 +310,21 @@ GameObject:
   - component: {fileID: 23588119898266422}
   m_Layer: 0
   m_Name: door_usemtl_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1749155001312408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4430184389567004}
+  m_Layer: 0
+  m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,6 +523,7 @@ Transform:
   - {fileID: 4281124283844656}
   - {fileID: 4598278217378760}
   - {fileID: 4692512708330278}
+  - {fileID: 4430184389567004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -548,6 +565,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4373986256455548}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4430184389567004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749155001312408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 40, z: 70}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4373986256455548}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4447927278332314
 Transform:
@@ -1550,7 +1580,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 330, y: 100, z: 550}
+  m_Size: {x: 200, y: 100, z: 550}
   m_Center: {x: 0, y: 70, z: 0}
 --- !u!114 &114290254907624684
 MonoBehaviour:
@@ -1583,3 +1613,17 @@ MonoBehaviour:
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &114837147933423306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541329625672160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174d8ca5456b165458f267a9ddc3fba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VasikBulletPrefab: {fileID: 1079581306266530, guid: 5016aeb7408cba942baa893f1bba7a0f,
+    type: 2}
+  BulletSpawnPosition: {fileID: 1749155001312408}
