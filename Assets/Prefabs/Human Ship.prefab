@@ -400,9 +400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c0f27e496066e43953d66f4a54d6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  Damage: 0
-  Speed: 0
+  Health: 100
+  Damage: 10
+  Speed: 20
   HumanBulletPrefab: {fileID: 1880237237511106, guid: ba5701fab3a8ce341a34beea783f16a5,
     type: 2}
   BulletSpawnPosition: {fileID: 1967373855989874}

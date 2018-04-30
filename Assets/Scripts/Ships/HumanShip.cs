@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts;
 
-public class VasikShip : Ship {
+public class HumanShip : Ship {
 
-    public GameObject VasikBulletPrefab;
-    public GameObject BulletSpawnPosition; 
+    public GameObject HumanBulletPrefab;
+    public GameObject BulletSpawnPosition;
 
-	// Use this for initialization
-	void Start ()
-    {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -19,16 +18,17 @@ public class VasikShip : Ship {
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            GameObject bullet = GameObject.Instantiate<GameObject>(VasikBulletPrefab);
+            GameObject bullet = GameObject.Instantiate<GameObject>(HumanBulletPrefab);
             bullet.transform.position = BulletSpawnPosition.transform.position;
             bullet.transform.rotation = transform.rotation;
             bullet.transform.parent = this.transform;
+            bullet.gameObject.GetComponent<Bullet>().Damage = this.Damage;
         }
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "HumanBullet")
+        if (collision.gameObject.tag == "VasikBullet")
         {
             GameObject.Destroy(collision.gameObject);
             //take damage

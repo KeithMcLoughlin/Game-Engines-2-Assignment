@@ -8,7 +8,7 @@ public class VasikBullet : Bullet {
     {
         if (other.gameObject.tag == "HumanShip")
         {
-            //do damage
+            other.gameObject.GetComponent<HumanShip>().ApplyDamage(Damage);
             GameObject.Destroy(this.gameObject);
         }
 

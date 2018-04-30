@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Scripts;
 
 public class SwitchCameraPosition : MonoBehaviour {
 
@@ -19,6 +20,17 @@ public class SwitchCameraPosition : MonoBehaviour {
         CameraBlinkingLightObject.SetActive(true);
         CameraNumberDisplayText = CameraNumberDisplayObject.GetComponent<Text>();
         CameraNumberDisplayText.text = "Cam 1";
+
+        /*
+        foreach(var cameraTransform in CameraPositions)
+        {
+            var shipScript = cameraTransform.gameObject.GetComponentInParent<Ship>();
+            if(shipScript != null)
+            {
+                shipScript.OnDeath += RemoveCameraOnShipDeath;
+            }
+        }
+        */
     }
 
 	void Update ()
@@ -52,5 +64,10 @@ public class SwitchCameraPosition : MonoBehaviour {
         SetCameraTransform(CameraPositions[cameraIndex]);
         CameraNumberDisplayText.text = "Cam " + (cameraIndex + 1);
         elapsed = 0.0f;
+    }
+
+    void RemoveCameraOnShipDeath()
+    {
+
     }
 }

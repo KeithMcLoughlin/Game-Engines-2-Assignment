@@ -383,6 +383,55 @@ MonoBehaviour:
   - {fileID: 987450822}
   CameraNumberDisplayObject: {fileID: 1118812333}
   CameraBlinkingLightObject: {fileID: 644098538}
+--- !u!1 &258020608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 258020610}
+  - component: {fileID: 258020609}
+  m_Layer: 5
+  m_Name: CharacterDialogBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &258020609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258020608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a446b7c394918714e9f6be90ceae4690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogTextObject: {fileID: 1209125960}
+  DialogBoxImage: {fileID: 1488519868}
+--- !u!224 &258020610
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258020608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.000030517578, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1488519871}
+  - {fileID: 1209125958}
+  m_Father: {fileID: 553786608}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &297707503
 Prefab:
   m_ObjectHideFlags: 0
@@ -521,6 +570,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dff59f437939359499980b46d9e285b3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &449530248 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1246253937482256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013116698}
+--- !u!114 &449530249 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013116698}
+  m_Script: {fileID: 11500000, guid: 58c0f27e496066e43953d66f4a54d6ee, type: 3}
+--- !u!114 &449530254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449530248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6643bc5f6f6b2489ab651ce504ceb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RelatedTeammate: {fileID: 1945964176}
+  CurrentShip: {fileID: 449530249}
+  Dialog: {fileID: 4900000, guid: 2a2548c46743e7d42bedeed88a700b9e, type: 3}
+  UIDialogObject: {fileID: 258020609}
+  DamageIncrease: 10
+  SpeedMultplier: 1
 --- !u!4 &490621122 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4256986667653548, guid: dff59f437939359499980b46d9e285b3,
@@ -540,7 +617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &505026962
 Transform:
   m_ObjectHideFlags: 0
@@ -585,6 +662,34 @@ Transform:
   m_Father: {fileID: 753968265}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 26, y: -135, z: 0}
+--- !u!1 &519489206 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837,
+    type: 2}
+  m_PrefabInternal: {fileID: 1771035557}
+--- !u!114 &519489207 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
+    type: 2}
+  m_PrefabInternal: {fileID: 1771035557}
+  m_Script: {fileID: 11500000, guid: 174d8ca5456b165458f267a9ddc3fba6, type: 3}
+--- !u!114 &519489212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519489206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6643bc5f6f6b2489ab651ce504ceb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RelatedTeammate: {fileID: 2050664224}
+  CurrentShip: {fileID: 519489207}
+  Dialog: {fileID: 4900000, guid: 85ce1a142d8d4264393f2c6c6091228d, type: 3}
+  UIDialogObject: {fileID: 258020609}
+  DamageIncrease: 0
+  SpeedMultplier: 1.5
 --- !u!4 &522832890 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4256986667653548, guid: dff59f437939359499980b46d9e285b3,
@@ -710,6 +815,7 @@ RectTransform:
   - {fileID: 966167119}
   - {fileID: 1118812336}
   - {fileID: 644098539}
+  - {fileID: 258020610}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -759,7 +865,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
       propertyPath: m_Name
-      value: Vasik Ship
+      value: Qan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
@@ -1159,7 +1269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1246253937482256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
       propertyPath: m_Name
-      value: Human Ship
+      value: Jordan
       objectReference: {fileID: 0}
     - target: {fileID: 4439504703726872, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1209,7 +1319,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1246253937482256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
       propertyPath: m_Name
-      value: Human Ship (2)
+      value: Stan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
@@ -1559,6 +1669,80 @@ Transform:
   m_PrefabParentObject: {fileID: 4975381738076256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
     type: 2}
   m_PrefabInternal: {fileID: 1014767595}
+--- !u!1 &1209125957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1209125958}
+  - component: {fileID: 1209125959}
+  - component: {fileID: 1209125960}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1209125958
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1209125957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 258020610}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 700, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1209125959
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1209125957}
+--- !u!114 &1209125960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1209125957}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: textmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
 --- !u!1 &1241792488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1890,73 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dff59f437939359499980b46d9e285b3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1488519868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1488519871}
+  - component: {fileID: 1488519870}
+  - component: {fileID: 1488519869}
+  m_Layer: 5
+  m_Name: DialogBoxImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1488519869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488519868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 02ef2ddae0a7766458f0653f9ad1507e, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1488519870
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488519868}
+--- !u!224 &1488519871
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488519868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 258020610}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 780, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1502696524
 Prefab:
   m_ObjectHideFlags: 0
@@ -1793,7 +2044,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
       propertyPath: m_Name
-      value: Vasik Ship (2)
+      value: Vix
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
@@ -1994,7 +2249,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1246253937482256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
       propertyPath: m_Name
-      value: Human Ship (1)
+      value: Linda
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
@@ -2167,7 +2422,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
       propertyPath: m_Name
-      value: Vasik Ship (1)
+      value: Regit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
@@ -2228,6 +2487,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4373986256455548, guid: 810a8c982a048424cb43ae4de5893837,
     type: 2}
   m_PrefabInternal: {fileID: 589150440}
+--- !u!1 &1945964175 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1246253937482256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1688570355}
+--- !u!114 &1945964176 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1688570355}
+  m_Script: {fileID: 11500000, guid: 58c0f27e496066e43953d66f4a54d6ee, type: 3}
+--- !u!114 &1945964181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1945964175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6643bc5f6f6b2489ab651ce504ceb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RelatedTeammate: {fileID: 449530249}
+  CurrentShip: {fileID: 1945964176}
+  Dialog: {fileID: 4900000, guid: a271a0d41cce9d54b907e77b3a5beff0, type: 3}
+  UIDialogObject: {fileID: 258020609}
+  DamageIncrease: 10
+  SpeedMultplier: 1
 --- !u!4 &1953452486 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4256986667653548, guid: dff59f437939359499980b46d9e285b3,
@@ -2271,6 +2558,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4692512708330278, guid: 810a8c982a048424cb43ae4de5893837,
     type: 2}
   m_PrefabInternal: {fileID: 317011240}
+--- !u!1 &2050664223 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837,
+    type: 2}
+  m_PrefabInternal: {fileID: 1514898968}
+--- !u!114 &2050664224 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
+    type: 2}
+  m_PrefabInternal: {fileID: 1514898968}
+  m_Script: {fileID: 11500000, guid: 174d8ca5456b165458f267a9ddc3fba6, type: 3}
+--- !u!114 &2050664229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050664223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6643bc5f6f6b2489ab651ce504ceb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RelatedTeammate: {fileID: 519489207}
+  CurrentShip: {fileID: 2050664224}
+  Dialog: {fileID: 4900000, guid: 5d3be52cac6c8bf4c8c98dc961bbca77, type: 3}
+  UIDialogObject: {fileID: 258020609}
+  DamageIncrease: 0
+  SpeedMultplier: 1.5
 --- !u!4 &2088063267 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4439504703726872, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
