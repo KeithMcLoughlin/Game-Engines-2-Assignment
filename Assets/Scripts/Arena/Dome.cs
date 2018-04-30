@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dome : MonoBehaviour {
     
+    //destroy bullets as they leave the dome
     public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "HumanBullet" ||

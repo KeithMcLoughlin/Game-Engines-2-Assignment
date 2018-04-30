@@ -11,6 +11,7 @@ public class PersonalDialog : MonoBehaviour {
 
     void Start()
     {
+        //run this dialog if this character dies
         CurrentShip.OnDeath += CharacterReaction;
     }
 

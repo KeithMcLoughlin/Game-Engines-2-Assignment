@@ -14,11 +14,12 @@ public class IntroScriptDisplay : MonoBehaviour {
 	void Start ()
     {
         Text displayText = GetComponent<Text>();
-        
         var introLines = Intro.text.Split(new string[] { "\r\n\r\n" }, System.StringSplitOptions.None);
 
+        //calculate time it will take to show intro
         TotalTime = introLines.Length * (TimePerLine + TimePerFade * 3);
 
+        //start showing intro
         StartCoroutine(IntroText(introLines, displayText, TimePerLine, TimePerFade));
     }
 

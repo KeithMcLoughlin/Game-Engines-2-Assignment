@@ -8,11 +8,7 @@ public class Obstacle : MonoBehaviour {
     
 	void Update ()
     {
+        //rotate around y axis
         transform.Rotate(Vector3.up * Time.deltaTime * RotationSpeed);
 	}
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        //todo if ship, damage it + push away
-    }
 }

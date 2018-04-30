@@ -9,6 +9,7 @@ public class ChaseTarget : SteeringBehaviour {
 
     public override Vector3 Calculate()
     {
+        //chase if there is a target
         if (target != null)
         {
             float dist = Vector3.Distance(target.transform.position, transform.position);

@@ -10,11 +10,14 @@ public class CharacterDialogBox : MonoBehaviour {
 
     public void DisplayDialog(TextAsset dialog)
     {
+        //display the dialog box
         DialogTextObject.enabled = true;
         DialogBoxImage.SetActive(true);
 
+        //display the text
         DialogTextObject.text = dialog.text;
 
+        //close it after 5 seconds
         Invoke("CloseDialogBox", 5);
     }
 

@@ -22,10 +22,8 @@ public class Boid : MonoBehaviour
         Vector3 toDest = targetDest - transform.position;
         toDest.Normalize();
         toDest *= maximumSpeed;
-
-        var t = toDest - velocity;
-        t.x *= 0.2f;
-        return t;
+        
+        return toDest - velocity;
     }
 
     Vector3 Calculate()
@@ -39,6 +37,7 @@ public class Boid : MonoBehaviour
                 
             }
         }
+        
         return force;
     }
 

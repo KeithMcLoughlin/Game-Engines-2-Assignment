@@ -5,7 +5,7 @@ using Assets.Scripts;
 
 public class CharacterDialog : MonoBehaviour {
 
-    public Ship RelatedTeammate;
+    public Ship RelatedTeammate; 
     public Ship CurrentShip;
     public TextAsset Dialog;
     public CharacterDialogBox UIDialogObject;
@@ -14,14 +14,17 @@ public class CharacterDialog : MonoBehaviour {
 
     void Start ()
     {
+        //if this teammate dies, run this dialog
         RelatedTeammate.OnDeath += CharacterReaction;
     }
 
     void CharacterReaction()
     {
+        //only run dialog if this character is still alive
         if (!CurrentShip.dead)
         {
             UIDialogObject.DisplayDialog(Dialog);
+            //apply buffs
             CurrentShip.Damage += DamageIncrease;
             CurrentShip.Speed *= SpeedMultplier;
         }

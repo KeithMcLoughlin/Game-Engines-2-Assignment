@@ -20,16 +20,19 @@ public class IntroCameraMovement : MonoBehaviour {
 	
 	void Update ()
     {
+        //lerp camera towards end position
         time += Time.deltaTime / ScriptToBeDisplayed.TotalTime;
         transform.position = Vector3.Lerp(StartTransform.position, EndTransform.position, time);
         transform.rotation = Quaternion.Lerp(StartTransform.rotation, EndTransform.rotation, time);
 
+        //skip intro if space if pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
             this.transform.position = EndTransform.position;
             this.transform.rotation = EndTransform.rotation;
         }
 
+        //when the intro has completed, start the battle
         if(this.transform.position == EndTransform.position)
         {
             ScriptToBeDisplayed.enabled = false;

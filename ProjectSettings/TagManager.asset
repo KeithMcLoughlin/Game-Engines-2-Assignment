@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - HumanShip
   - VasikShip
+  - Fire
+  - Dome
   layers:
   - Default
   - TransparentFX

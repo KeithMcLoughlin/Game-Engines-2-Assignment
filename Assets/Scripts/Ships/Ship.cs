@@ -31,11 +31,14 @@ namespace Assets.Scripts
         {
             chaseBehaviour = GetComponent<ChaseTarget>();
             obstacleAvoidenceBehaviour = GetComponent<AvoidCloseObstacles>();
+
+            //set a random target to start with
             SetRandomTarget();
         }
         
         void Update()
         {
+            //if this has a target, is close enough to attack and the target is within its field of vision, fire at it
             if (currentTarget != null && Vector3.Distance(currentTarget.transform.position, transform.position) < AttackRange && elapsed > FireRate)
             {
                 Vector3 distVec = currentTarget.transform.position - transform.position;
@@ -45,16 +48,20 @@ namespace Assets.Scripts
                 float angle = Mathf.Acos(dot);
                 float fov = 45.0f * Mathf.Deg2Rad;
                 float halfFov = fov / 2.0f;
+                //if target is within field of view
                 if (angle < halfFov)
                 {
+                    //create + fire a bullet
                     GameObject bullet = GameObject.Instantiate<GameObject>(BulletPrefab);
                     bullet.transform.position = BulletSpawnPosition.transform.position;
                     bullet.transform.rotation = transform.rotation;
+                    //change the bullets damage to be the same as this ships damage
                     bullet.gameObject.GetComponent<Bullet>().Damage = this.Damage;
                     elapsed = 0.0f;
                 }
             }
 
+            //if this ship has no target or the target is too close, find another target
             if (currentTarget == null || obstacleAvoidenceBehaviour.ObjectsInVicinity.Contains(currentTarget.gameObject))
                 SetToAnotherTarget();
 
@@ -72,11 +79,13 @@ namespace Assets.Scripts
 
         private void Die()
         {
+            //make ship explode
             GameObject explosion = GameObject.Instantiate<GameObject>(ExplosionPrefab);
             explosion.transform.position = this.transform.position;
             var particleSystem = explosion.GetComponent<ParticleSystem>();
             particleSystem.Play();
 
+            //notify subscribers that this ship has died
             if (OnDeath != null)
             {
                 OnDeath();
@@ -96,6 +105,7 @@ namespace Assets.Scripts
             Boid newTarget = null;
             foreach(var target in Targets)
             {
+                //if its a valid target, make it the ships target
                 if (target != null && !obstacleAvoidenceBehaviour.ObjectsInVicinity.Contains(target.gameObject))
                 {
                     newTarget = target;
