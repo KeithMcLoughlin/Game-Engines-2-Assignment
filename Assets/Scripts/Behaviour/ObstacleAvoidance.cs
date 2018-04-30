@@ -7,23 +7,13 @@ public class ObstacleAvoidance : SteeringBehaviour {
 
     public float scale = 4.0f;
     public float forwardFeelerDepth = 30;
-    public float sideFeelerDepth = 15;
+    public float sideFeelerDepth = 30;
     FeelerInfo[] feelers = new FeelerInfo[5];
 
     public float frontFeelerUpdatesPerSecond = 10.0f;
     public float sideFeelerUpdatesPerSecond = 5.0f;
 
-    public float feelerRadius = 2.0f;
-
-    public enum ForceType
-    {
-        normal,
-        incident,
-        up,
-        braking
-    };
-
-    public ForceType forceType = ForceType.normal;
+    public float feelerRadius = 5.0f;
 
     public LayerMask mask = -1;
 
@@ -32,7 +22,6 @@ public class ObstacleAvoidance : SteeringBehaviour {
         StartCoroutine(UpdateFrontFeelers());
         StartCoroutine(UpdateSideFeelers());
     }
-
     
     public void OnDrawGizmos()
     {
@@ -55,7 +44,6 @@ public class ObstacleAvoidance : SteeringBehaviour {
             }
         }
     }
-    
 
     public override Vector3 Calculate()
     {
@@ -80,11 +68,10 @@ public class ObstacleAvoidance : SteeringBehaviour {
         RaycastHit info;
         bool collided = Physics.SphereCast(transform.position, feelerRadius, direction, out info, depth, mask.value);
         Vector3 feelerEnd = collided ? info.point : (transform.position + direction * depth);
-        feelers[feelerNum] = new FeelerInfo(feelerEnd, info.normal
-            , collided, feelerType);
+        feelers[feelerNum] = new FeelerInfo(feelerEnd, info.normal, collided, feelerType);
     }
 
-    System.Collections.IEnumerator UpdateFrontFeelers()
+    IEnumerator UpdateFrontFeelers()
     {
         yield return new WaitForSeconds(Random.Range(0.0f, 0.5f));
         while (true)
@@ -94,7 +81,7 @@ public class ObstacleAvoidance : SteeringBehaviour {
         }
     }
 
-    System.Collections.IEnumerator UpdateSideFeelers()
+    IEnumerator UpdateSideFeelers()
     {
         yield return new WaitForSeconds(Random.Range(0.0f, 0.5f));
         float angle = 45;
@@ -121,22 +108,13 @@ public class ObstacleAvoidance : SteeringBehaviour {
         Vector3 fromTarget = fromTarget = transform.position - info.point;
         float dist = Vector3.Distance(transform.position, info.point);
 
-        switch (forceType)
-        {
-            case ForceType.normal:
-                force = info.normal * (forwardFeelerDepth * scale / dist);
-                break;
-            case ForceType.incident:
-                fromTarget.Normalize();
-                force -= Vector3.Reflect(fromTarget, info.normal) * (forwardFeelerDepth / dist);
-                break;
-            case ForceType.up:
-                force += Vector3.up * (forwardFeelerDepth * scale / dist);
-                break;
-            case ForceType.braking:
-                force += fromTarget * (forwardFeelerDepth / dist);
-                break;
-        }
+        force = info.normal * (forwardFeelerDepth * scale / dist);
+
+        //fromTarget.Normalize();
+        //force -= Vector3.Reflect(fromTarget, info.normal) * (forwardFeelerDepth / dist);
+
+        //force += fromTarget * (forwardFeelerDepth / dist);
+               
         return force;
     }
 

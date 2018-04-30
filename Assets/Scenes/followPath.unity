@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &122706704
 Transform:
   m_ObjectHideFlags: 0
@@ -826,7 +826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &505026962
 Transform:
   m_ObjectHideFlags: 0
@@ -1090,23 +1090,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
         type: 2}
       propertyPath: Targets.Array.data[0]
       value: 
-      objectReference: {fileID: 449530251}
+      objectReference: {fileID: 1012510974}
     - target: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
         type: 2}
       propertyPath: Targets.Array.data[1]
       value: 
-      objectReference: {fileID: 1945964178}
+      objectReference: {fileID: 449530251}
     - target: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
         type: 2}
       propertyPath: Targets.Array.data[2]
       value: 
-      objectReference: {fileID: 1012510974}
+      objectReference: {fileID: 1945964178}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
   m_IsPrefabParent: 0
@@ -1537,13 +1537,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1246253937482256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
         type: 2}
       propertyPath: Targets.Array.data[0]
       value: 
-      objectReference: {fileID: 2050664226}
+      objectReference: {fileID: 446027026}
     - target: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
         type: 2}
       propertyPath: Targets.Array.data[1]
@@ -1553,7 +1553,7 @@ Prefab:
         type: 2}
       propertyPath: Targets.Array.data[2]
       value: 
-      objectReference: {fileID: 446027026}
+      objectReference: {fileID: 2050664226}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
   m_IsPrefabParent: 0
@@ -1638,18 +1638,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1246253937482256, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
         type: 2}
       propertyPath: Targets.Array.data[0]
       value: 
-      objectReference: {fileID: 2050664226}
+      objectReference: {fileID: 519489209}
     - target: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
         type: 2}
       propertyPath: Targets.Array.data[1]
       value: 
-      objectReference: {fileID: 519489209}
+      objectReference: {fileID: 2050664226}
     - target: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
         type: 2}
       propertyPath: Targets.Array.data[2]
@@ -2487,7 +2487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
         type: 2}
@@ -2498,17 +2498,17 @@ Prefab:
         type: 2}
       propertyPath: Targets.Array.data[0]
       value: 
-      objectReference: {fileID: 449530251}
+      objectReference: {fileID: 1945964178}
     - target: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
         type: 2}
       propertyPath: Targets.Array.data[1]
       value: 
-      objectReference: {fileID: 1945964178}
+      objectReference: {fileID: 1012510974}
     - target: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
         type: 2}
       propertyPath: Targets.Array.data[2]
       value: 
-      objectReference: {fileID: 1012510974}
+      objectReference: {fileID: 449530251}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
   m_IsPrefabParent: 0
@@ -2567,7 +2567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1572751637
 Transform:
   m_ObjectHideFlags: 0
@@ -2725,12 +2725,12 @@ Prefab:
         type: 2}
       propertyPath: Targets.Array.data[1]
       value: 
-      objectReference: {fileID: 519489209}
+      objectReference: {fileID: 446027026}
     - target: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
         type: 2}
       propertyPath: Targets.Array.data[2]
       value: 
-      objectReference: {fileID: 446027026}
+      objectReference: {fileID: 519489209}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
   m_IsPrefabParent: 0
@@ -2916,7 +2916,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1541329625672160, guid: 810a8c982a048424cb43ae4de5893837, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114837147933423306, guid: 810a8c982a048424cb43ae4de5893837,
         type: 2}

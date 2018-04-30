@@ -58,7 +58,8 @@ GameObject:
   - component: {fileID: 65043393453151968}
   - component: {fileID: 114080494156959710}
   - component: {fileID: 54805740199760534}
-  - component: {fileID: 114079482854736750}
+  - component: {fileID: 114416769271875684}
+  - component: {fileID: 135473116135174040}
   m_Layer: 9
   m_Name: Human Ship
   m_TagString: HumanShip
@@ -390,30 +391,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 250, y: 80, z: 350}
   m_Center: {x: 0, y: 100, z: -100}
---- !u!114 &114079482854736750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1246253937482256}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0953d976ef36b7d448fa6526bff48c3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  boid: {fileID: 0}
-  scale: 4
-  forwardFeelerDepth: 30
-  sideFeelerDepth: 15
-  frontFeelerUpdatesPerSecond: 10
-  sideFeelerUpdatesPerSecond: 5
-  feelerRadius: 2
-  forceType: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &114080494156959710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,6 +429,21 @@ MonoBehaviour:
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &114416769271875684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246253937482256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e3a2688d461e0478818a653d435dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  force: {x: 0, y: 0, z: 0}
+  boid: {fileID: 0}
+  ObjectsInVicinity: []
 --- !u!114 &114688519615192284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -464,5 +456,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1
-  maximumSpeed: 10
+  maximumSpeed: 40
   velocity: {x: 0, y: 0, z: 0}
+--- !u!135 &135473116135174040
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246253937482256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1000
+  m_Center: {x: 0, y: 100, z: -100}

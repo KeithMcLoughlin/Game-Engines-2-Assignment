@@ -8,7 +8,6 @@ public class Boid : MonoBehaviour
 
     public float mass = 1;
     public float maximumSpeed = 10;
-    SteeringBehaviour steeringBehaviour;
     public Vector3 velocity = Vector3.zero;
     Vector3 force = Vector3.zero;
     Vector3 acceleration = Vector3.zero;
@@ -23,7 +22,10 @@ public class Boid : MonoBehaviour
         Vector3 toDest = targetDest - transform.position;
         toDest.Normalize();
         toDest *= maximumSpeed;
-        return toDest - velocity;
+
+        var t = toDest - velocity;
+        t.x *= 0.2f;
+        return t;
     }
 
     Vector3 Calculate()

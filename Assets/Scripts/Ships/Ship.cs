@@ -20,6 +20,7 @@ namespace Assets.Scripts
         float elapsed = 0.0f;
         Boid currentTarget;
         ChaseTarget chaseBehaviour;
+        AvoidCloseObstacles obstacleAvoidenceBehaviour;
 
         public delegate void DeathDelegate();
         public event DeathDelegate OnDeath;
@@ -28,22 +29,34 @@ namespace Assets.Scripts
 
         void Start()
         {
-            currentTarget = Targets[UnityEngine.Random.Range(0, Targets.Count)];
             chaseBehaviour = GetComponent<ChaseTarget>();
-            chaseBehaviour.target = currentTarget;
+            obstacleAvoidenceBehaviour = GetComponent<AvoidCloseObstacles>();
+            SetRandomTarget();
         }
         
         void Update()
         {
-            if(Vector3.Distance(currentTarget.transform.position, transform.position) < AttackRange && elapsed > FireRate)
+            if (currentTarget != null && Vector3.Distance(currentTarget.transform.position, transform.position) < AttackRange && elapsed > FireRate)
             {
-                GameObject bullet = GameObject.Instantiate<GameObject>(BulletPrefab);
-                bullet.transform.position = BulletSpawnPosition.transform.position;
-                bullet.transform.rotation = transform.rotation;
-                bullet.transform.parent = this.transform;
-                bullet.gameObject.GetComponent<Bullet>().Damage = this.Damage;
-                elapsed = 0.0f;
+                Vector3 distVec = currentTarget.transform.position - transform.position;
+                distVec.Normalize();
+                float dot = Vector3.Dot(distVec, transform.forward);
+
+                float angle = Mathf.Acos(dot);
+                float fov = 45.0f * Mathf.Deg2Rad;
+                float halfFov = fov / 2.0f;
+                if (angle < halfFov)
+                {
+                    GameObject bullet = GameObject.Instantiate<GameObject>(BulletPrefab);
+                    bullet.transform.position = BulletSpawnPosition.transform.position;
+                    bullet.transform.rotation = transform.rotation;
+                    bullet.gameObject.GetComponent<Bullet>().Damage = this.Damage;
+                    elapsed = 0.0f;
+                }
             }
+
+            if (currentTarget == null || obstacleAvoidenceBehaviour.ObjectsInVicinity.Contains(currentTarget.gameObject))
+                SetToAnotherTarget();
 
             elapsed += Time.deltaTime;
         }
@@ -70,6 +83,26 @@ namespace Assets.Scripts
             }
             dead = true;
             GameObject.Destroy(this.gameObject);
+        }
+        
+        public void SetRandomTarget()
+        {
+            currentTarget = Targets[UnityEngine.Random.Range(0, Targets.Count)];
+            chaseBehaviour.target = currentTarget;
+        }
+        
+        public void SetToAnotherTarget()
+        {
+            Boid newTarget = null;
+            foreach(var target in Targets)
+            {
+                if (target != null && !obstacleAvoidenceBehaviour.ObjectsInVicinity.Contains(target.gameObject))
+                {
+                    newTarget = target;
+                    break;
+                }
+            }
+            chaseBehaviour.target = newTarget;
         }
     }
 }

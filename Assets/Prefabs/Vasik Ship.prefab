@@ -243,7 +243,8 @@ GameObject:
   - component: {fileID: 65057806393173930}
   - component: {fileID: 114837147933423306}
   - component: {fileID: 54768043850848888}
-  - component: {fileID: 114185254067811418}
+  - component: {fileID: 114165948787585532}
+  - component: {fileID: 135333870966174276}
   m_Layer: 8
   m_Name: Vasik Ship
   m_TagString: VasikShip
@@ -1599,30 +1600,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 200, y: 80, z: 550}
   m_Center: {x: 0, y: 100, z: 0}
---- !u!114 &114185254067811418
+--- !u!114 &114165948787585532
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1541329625672160}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0953d976ef36b7d448fa6526bff48c3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 29e3a2688d461e0478818a653d435dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
-  scale: 4
-  forwardFeelerDepth: 30
-  sideFeelerDepth: 15
-  frontFeelerUpdatesPerSecond: 10
-  sideFeelerUpdatesPerSecond: 5
-  feelerRadius: 2
-  forceType: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  ObjectsInVicinity: []
 --- !u!114 &114290254907624684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1635,7 +1627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1
-  maximumSpeed: 10
+  maximumSpeed: 40
   velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114631205475019408
 MonoBehaviour:
@@ -1675,3 +1667,15 @@ MonoBehaviour:
   FireRate: 1
   ExplosionPrefab: {fileID: 1144198704413406, guid: 9976a870ad6ece743a038f0c08dea95d,
     type: 2}
+--- !u!135 &135333870966174276
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541329625672160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1000
+  m_Center: {x: 0, y: 100, z: 0}

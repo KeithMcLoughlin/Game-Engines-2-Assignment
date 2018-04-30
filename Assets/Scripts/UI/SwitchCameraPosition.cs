@@ -37,7 +37,8 @@ public class SwitchCameraPosition : MonoBehaviour {
             ChangeCamera(currentCameraPosition);
         }
 
-        SetCameraTransform(CameraPositions[currentCameraIndex]);
+        if(CameraPositions[currentCameraIndex] != null)
+            SetCameraTransform(CameraPositions[currentCameraIndex]);
 
         elapsed += Time.deltaTime;
     }
