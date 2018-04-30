@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
 
-public class VasikShip : MonoBehaviour {
+public class VasikShip : Ship {
 
     public GameObject VasikBulletPrefab;
     public GameObject BulletSpawnPosition; 

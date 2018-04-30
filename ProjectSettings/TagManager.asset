@@ -7,6 +7,8 @@ TagManager:
   - HumanBullet
   - VasikBullet
   - Obstacle
+  - HumanShip
+  - VasikShip
   layers:
   - Default
   - TransparentFX
@@ -16,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Vasik
+  - Human
+  - VasikBullet
+  - HumanBullet
   - 
   - 
   - 

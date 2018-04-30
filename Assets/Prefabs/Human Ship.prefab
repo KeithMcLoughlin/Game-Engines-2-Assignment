@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4746382588066202}
   - component: {fileID: 33079127782297636}
   - component: {fileID: 23659194106463146}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: mesh01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4900356828423572}
   - component: {fileID: 33956909623019774}
   - component: {fileID: 23332667072806110}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default_MeshPart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,9 +57,10 @@ GameObject:
   - component: {fileID: 114688519615192284}
   - component: {fileID: 65043393453151968}
   - component: {fileID: 114080494156959710}
-  m_Layer: 0
+  - component: {fileID: 54805740199760534}
+  m_Layer: 9
   m_Name: Human Ship
-  m_TagString: Untagged
+  m_TagString: HumanShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4387187428208178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +90,7 @@ GameObject:
   - component: {fileID: 4031065692770020}
   - component: {fileID: 33332394842357506}
   - component: {fileID: 23682638405200634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default_MeshPart0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +105,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4975381738076256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CameraPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +120,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4433192707229038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,6 +362,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152264900203740}
   m_Mesh: {fileID: 4300002, guid: d1e1acb47b6df9640a11f6ac3c4084cb, type: 3}
+--- !u!54 &54805740199760534
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246253937482256}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!65 &65043393453151968
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -371,8 +387,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 250, y: 75, z: 350}
-  m_Center: {x: 0, y: 120, z: -100}
+  m_Size: {x: 250, y: 80, z: 350}
+  m_Center: {x: 0, y: 100, z: -100}
 --- !u!114 &114080494156959710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,6 +400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c0f27e496066e43953d66f4a54d6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
+  Damage: 0
+  Speed: 0
   HumanBulletPrefab: {fileID: 1880237237511106, guid: ba5701fab3a8ce341a34beea783f16a5,
     type: 2}
   BulletSpawnPosition: {fileID: 1967373855989874}

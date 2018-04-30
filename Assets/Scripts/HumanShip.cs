@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
 
-public class HumanShip : MonoBehaviour {
+public class HumanShip : Ship {
 
     public GameObject HumanBulletPrefab;
     public GameObject BulletSpawnPosition;
