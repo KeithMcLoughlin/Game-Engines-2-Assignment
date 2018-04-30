@@ -1643,7 +1643,8 @@ MonoBehaviour:
   Health: 100
   Damage: 10
   Speed: 20
-  ExplosionPrefab: {fileID: 0}
+  ExplosionPrefab: {fileID: 1144198704413406, guid: 9976a870ad6ece743a038f0c08dea95d,
+    type: 2}
   VasikBulletPrefab: {fileID: 1079581306266530, guid: 5016aeb7408cba942baa893f1bba7a0f,
     type: 2}
   BulletSpawnPosition: {fileID: 1749155001312408}
