@@ -12,11 +12,23 @@ namespace Assets.Scripts
         public int Damage = 5;
         public float Speed = 20;
         public bool dead = false;
+        public List<Ship> Targets;
+        Ship currentTarget;
 
         public delegate void DeathDelegate();
         public event DeathDelegate OnDeath;
 
         public GameObject ExplosionPrefab;
+
+        void Start()
+        {
+            currentTarget = Targets[UnityEngine.Random.Range(0, Targets.Count)];
+        }
+
+        void Update()
+        {
+            
+        }
 
         public void ApplyDamage(int damage)
         {

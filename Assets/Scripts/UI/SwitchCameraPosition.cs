@@ -20,17 +20,6 @@ public class SwitchCameraPosition : MonoBehaviour {
         CameraBlinkingLightObject.SetActive(true);
         CameraNumberDisplayText = CameraNumberDisplayObject.GetComponent<Text>();
         CameraNumberDisplayText.text = "Cam 1";
-
-        /*
-        foreach(var cameraTransform in CameraPositions)
-        {
-            var shipScript = cameraTransform.gameObject.GetComponentInParent<Ship>();
-            if(shipScript != null)
-            {
-                shipScript.OnDeath += RemoveCameraOnShipDeath;
-            }
-        }
-        */
     }
 
 	void Update ()
@@ -61,13 +50,15 @@ public class SwitchCameraPosition : MonoBehaviour {
         var cameraIndex = cameraNumber % CameraPositions.Count;
         if (cameraIndex < 0)
             cameraIndex += CameraPositions.Count;
+
+        if (CameraPositions[cameraIndex] == null)
+        {
+            CameraPositions.Remove(CameraPositions[cameraIndex]);
+            cameraIndex = cameraIndex % CameraPositions.Count;
+        }
+
         SetCameraTransform(CameraPositions[cameraIndex]);
         CameraNumberDisplayText.text = "Cam " + (cameraIndex + 1);
         elapsed = 0.0f;
-    }
-
-    void RemoveCameraOnShipDeath()
-    {
-
     }
 }
