@@ -11,6 +11,7 @@ namespace Assets.Scripts
         public int Health = 100;
         public int Damage = 5;
         public float Speed = 20;
+        public bool dead = false;
 
         public delegate void DeathDelegate();
         public event DeathDelegate OnDeath;
@@ -37,6 +38,7 @@ namespace Assets.Scripts
             {
                 OnDeath();
             }
+            dead = true;
             GameObject.Destroy(this.gameObject);
         }
     }

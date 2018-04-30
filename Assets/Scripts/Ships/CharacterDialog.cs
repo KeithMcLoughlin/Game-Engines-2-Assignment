@@ -19,8 +19,11 @@ public class CharacterDialog : MonoBehaviour {
 
     void CharacterReaction()
     {
-        UIDialogObject.DisplayDialog(Dialog);
-        CurrentShip.Damage += DamageIncrease;
-        CurrentShip.Speed *= SpeedMultplier;
+        if (!CurrentShip.dead)
+        {
+            UIDialogObject.DisplayDialog(Dialog);
+            CurrentShip.Damage += DamageIncrease;
+            CurrentShip.Speed *= SpeedMultplier;
+        }
     }
 }
