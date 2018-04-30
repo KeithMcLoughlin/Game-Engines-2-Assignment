@@ -13,6 +13,7 @@ public class SwitchCameraPosition : MonoBehaviour {
     float elapsed = 0.0f;
     float timeBetweenSwitches = 5;
     int currentCameraPosition = 0;
+    int currentCameraIndex = 0;
 	
     void Start()
     {
@@ -36,6 +37,8 @@ public class SwitchCameraPosition : MonoBehaviour {
             ChangeCamera(currentCameraPosition);
         }
 
+        SetCameraTransform(CameraPositions[currentCameraIndex]);
+
         elapsed += Time.deltaTime;
     }
 
@@ -56,9 +59,9 @@ public class SwitchCameraPosition : MonoBehaviour {
             CameraPositions.Remove(CameraPositions[cameraIndex]);
             cameraIndex = cameraIndex % CameraPositions.Count;
         }
-
-        SetCameraTransform(CameraPositions[cameraIndex]);
+        
         CameraNumberDisplayText.text = "Cam " + (cameraIndex + 1);
+        currentCameraIndex = cameraIndex;
         elapsed = 0.0f;
     }
 }

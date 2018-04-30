@@ -5,27 +5,18 @@ using Assets.Scripts;
 
 public class VasikShip : Ship {
 
-    public GameObject VasikBulletPrefab;
-    public GameObject BulletSpawnPosition; 
-
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
+    /*// Update is called once per frame
 	void Update ()
     {
-        /*if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             GameObject bullet = GameObject.Instantiate<GameObject>(VasikBulletPrefab);
             bullet.transform.position = BulletSpawnPosition.transform.position;
             bullet.transform.rotation = transform.rotation;
             bullet.transform.parent = this.transform;
             bullet.gameObject.GetComponent<Bullet>().Damage = this.Damage;
-        }*/
-    }
+        }
+    }*/
 
     public void OnCollisionEnter(Collision collision)
     {

@@ -6,40 +6,24 @@ public class Boid : MonoBehaviour
 {
     List<SteeringBehaviour> behaviours = new List<SteeringBehaviour>();
 
-    public Vector3 force = Vector3.zero;
-    public Vector3 acceleration = Vector3.zero;
-    public Vector3 velocity = Vector3.zero;
     public float mass = 1;
-    public float maxSpeed = 5.0f;
-    
+    public float maximumSpeed = 10;
+    SteeringBehaviour steeringBehaviour;
+    public Vector3 velocity = Vector3.zero;
+    Vector3 force = Vector3.zero;
+    Vector3 acceleration = Vector3.zero;
+
     void Start()
     {
         behaviours.AddRange(GetComponents<SteeringBehaviour>());
     }
 
-    public Vector3 SeekForce(Vector3 target)
+    public Vector3 SeekForce(Vector3 targetDest)
     {
-        Vector3 desired = target - transform.position;
-        desired.Normalize();
-        desired *= maxSpeed;
-        return desired - velocity;
-    }
-
-    public Vector3 ArriveForce(Vector3 target, float slowingDistance = 15.0f, float deceleration = 1.0f)
-    {
-        Vector3 toTarget = target - transform.position;
-
-        float distance = toTarget.magnitude;
-        if (distance == 0)
-        {
-            return Vector3.zero;
-        }
-        float ramped = maxSpeed * (distance / (slowingDistance * deceleration));
-
-        float clamped = Mathf.Min(ramped, maxSpeed);
-        Vector3 desired = clamped * (toTarget / distance);
-
-        return desired - velocity;
+        Vector3 toDest = targetDest - transform.position;
+        toDest.Normalize();
+        toDest *= maximumSpeed;
+        return toDest - velocity;
     }
 
     Vector3 Calculate()
@@ -50,9 +34,9 @@ public class Boid : MonoBehaviour
             if (b.isActiveAndEnabled)
             {
                 force += b.Calculate() * b.weight;
+                
             }
         }
-        
         return force;
     }
 
@@ -66,7 +50,7 @@ public class Boid : MonoBehaviour
 
         velocity += acceleration * Time.deltaTime;
 
-        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+        velocity = Vector3.ClampMagnitude(velocity, maximumSpeed);
 
         Vector3 globalUp = new Vector3(0, 0.2f, 0);
         Vector3 accelUp = acceleration * 0.05f;

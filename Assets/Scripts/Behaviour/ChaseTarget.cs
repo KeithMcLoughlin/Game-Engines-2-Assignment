@@ -10,7 +10,7 @@ public class ChaseTarget : SteeringBehaviour {
     public override Vector3 Calculate()
     {
         float dist = Vector3.Distance(target.transform.position, transform.position);
-        float time = dist / boid.maxSpeed;
+        float time = dist / boid.maximumSpeed;
 
         targetPos = target.transform.position + (time * target.velocity);
 

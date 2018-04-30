@@ -53,11 +53,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4439504703726872}
-  - component: {fileID: 114131492755544506}
   - component: {fileID: 114688519615192284}
+  - component: {fileID: 114262198525311632}
   - component: {fileID: 65043393453151968}
   - component: {fileID: 114080494156959710}
   - component: {fileID: 54805740199760534}
+  - component: {fileID: 114079482854736750}
   m_Layer: 9
   m_Name: Human Ship
   m_TagString: HumanShip
@@ -389,6 +390,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 250, y: 80, z: 350}
   m_Center: {x: 0, y: 100, z: -100}
+--- !u!114 &114079482854736750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246253937482256}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0953d976ef36b7d448fa6526bff48c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  force: {x: 0, y: 0, z: 0}
+  boid: {fileID: 0}
+  scale: 4
+  forwardFeelerDepth: 30
+  sideFeelerDepth: 15
+  frontFeelerUpdatesPerSecond: 10
+  sideFeelerUpdatesPerSecond: 5
+  feelerRadius: 2
+  forceType: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114080494156959710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -403,12 +428,16 @@ MonoBehaviour:
   Health: 100
   Damage: 10
   Speed: 20
-  ExplosionPrefab: {fileID: 1144198704413406, guid: 9976a870ad6ece743a038f0c08dea95d,
-    type: 2}
-  HumanBulletPrefab: {fileID: 1880237237511106, guid: ba5701fab3a8ce341a34beea783f16a5,
+  dead: 0
+  Targets: []
+  AttackRange: 100
+  BulletPrefab: {fileID: 1880237237511106, guid: ba5701fab3a8ce341a34beea783f16a5,
     type: 2}
   BulletSpawnPosition: {fileID: 1967373855989874}
---- !u!114 &114131492755544506
+  FireRate: 1
+  ExplosionPrefab: {fileID: 1144198704413406, guid: 9976a870ad6ece743a038f0c08dea95d,
+    type: 2}
+--- !u!114 &114262198525311632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -416,26 +445,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1246253937482256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3938a4d951fad274ab044b03b57dceae, type: 3}
+  m_Script: {fileID: 11500000, guid: 95543cd0e92637a45a5b96e7baf22501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
-  path: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &114688519615192284
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246253937482256}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f38055ad8797534b94f5da9e1e86bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
   mass: 1
-  maxSpeed: 2000
+  maximumSpeed: 10
+  velocity: {x: 0, y: 0, z: 0}
