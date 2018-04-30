@@ -2251,6 +2251,12 @@ Prefab:
       propertyPath: m_Name
       value: Linda
       objectReference: {fileID: 0}
+    - target: {fileID: 114080494156959710, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d,
+        type: 2}
+      propertyPath: ExplosionPrefab
+      value: 
+      objectReference: {fileID: 1144198704413406, guid: 9976a870ad6ece743a038f0c08dea95d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34d6e940f9e9dfb4fbf20c9b0d861c7d, type: 2}
   m_IsPrefabParent: 0

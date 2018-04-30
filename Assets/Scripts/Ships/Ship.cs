@@ -15,9 +15,10 @@ namespace Assets.Scripts
         public delegate void DeathDelegate();
         public event DeathDelegate OnDeath;
 
+        public GameObject ExplosionPrefab;
+
         public void ApplyDamage(int damage)
         {
-            Debug.Log("Taken Damage: " + damage);
             Health -= damage;
             if(Health <= 0)
             {
@@ -27,8 +28,11 @@ namespace Assets.Scripts
 
         private void Die()
         {
-            //todo : explode
-            Debug.Log("i have died");
+            GameObject explosion = GameObject.Instantiate<GameObject>(ExplosionPrefab);
+            explosion.transform.position = this.transform.position;
+            var particleSystem = explosion.GetComponent<ParticleSystem>();
+            particleSystem.Play();
+
             if (OnDeath != null)
             {
                 OnDeath();
