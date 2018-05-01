@@ -680,7 +680,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1689615482340650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36, y: 79, z: 42}
+  m_LocalPosition: {x: 0.36, y: 79, z: 55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4373986256455548}
@@ -1627,7 +1627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1
-  maximumSpeed: 40
+  maximumSpeed: 30
   velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114631205475019408
 MonoBehaviour:
@@ -1660,7 +1660,7 @@ MonoBehaviour:
   Speed: 20
   dead: 0
   Targets: []
-  AttackRange: 100
+  AttackRange: 600
   BulletPrefab: {fileID: 1079581306266530, guid: 5016aeb7408cba942baa893f1bba7a0f,
     type: 2}
   BulletSpawnPosition: {fileID: 1749155001312408}
@@ -1677,5 +1677,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1000
+  m_Radius: 800
   m_Center: {x: 0, y: 100, z: 0}

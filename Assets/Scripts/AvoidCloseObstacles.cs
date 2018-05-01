@@ -11,6 +11,7 @@ public class AvoidCloseObstacles : SteeringBehaviour {
     {
         force = Vector3.zero;
 
+        ObjectsInVicinity.RemoveAll(item => item == null);
         //apply force from each nearby object
         foreach (var nearbyObject in ObjectsInVicinity)
         {

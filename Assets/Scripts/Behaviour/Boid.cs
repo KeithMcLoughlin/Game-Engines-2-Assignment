@@ -37,7 +37,6 @@ public class Boid : MonoBehaviour
                 
             }
         }
-        
         return force;
     }
 

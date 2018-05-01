@@ -63,7 +63,9 @@ namespace Assets.Scripts
 
             //if this ship has no target or the target is too close, find another target
             if (currentTarget == null || obstacleAvoidenceBehaviour.ObjectsInVicinity.Contains(currentTarget.gameObject))
-                SetToAnotherTarget();
+                SetRandomTargetThatIsNotCurrent();
+
+            Targets.RemoveAll(target => target == null);
 
             elapsed += Time.deltaTime;
         }
@@ -96,13 +98,31 @@ namespace Assets.Scripts
         
         public void SetRandomTarget()
         {
+            if (Targets.Count == 0)
+                return;
             currentTarget = Targets[UnityEngine.Random.Range(0, Targets.Count)];
             chaseBehaviour.target = currentTarget;
         }
-        
+
+        public void SetRandomTargetThatIsNotCurrent()
+        {
+            List<Boid> temp = new List<Boid>();
+            foreach(var target in Targets)
+            {
+                temp.Add(target);
+            }
+            temp.Remove(currentTarget);
+
+            if (temp.Count <= 0)
+                return;
+            currentTarget = temp[UnityEngine.Random.Range(0, temp.Count)];
+            chaseBehaviour.target = currentTarget;
+        }
+
         public void SetToAnotherTarget()
         {
             Boid newTarget = null;
+            
             foreach(var target in Targets)
             {
                 //if its a valid target, make it the ships target
@@ -112,6 +132,7 @@ namespace Assets.Scripts
                     break;
                 }
             }
+            
             chaseBehaviour.target = newTarget;
         }
     }

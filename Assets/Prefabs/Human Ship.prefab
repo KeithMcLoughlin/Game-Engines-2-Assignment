@@ -407,7 +407,7 @@ MonoBehaviour:
   Speed: 20
   dead: 0
   Targets: []
-  AttackRange: 100
+  AttackRange: 600
   BulletPrefab: {fileID: 1880237237511106, guid: ba5701fab3a8ce341a34beea783f16a5,
     type: 2}
   BulletSpawnPosition: {fileID: 1967373855989874}
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1
-  maximumSpeed: 40
+  maximumSpeed: 30
   velocity: {x: 0, y: 0, z: 0}
 --- !u!135 &135473116135174040
 SphereCollider:
@@ -468,5 +468,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1000
+  m_Radius: 800
   m_Center: {x: 0, y: 100, z: -100}
